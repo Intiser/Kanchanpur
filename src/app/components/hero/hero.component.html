@@ -1,0 +1,26 @@
+<div 
+  class="relative h-screen max-h-[700px] flex items-center justify-center bg-cover bg-center"
+  [ngStyle]="{'background-image': 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(' + backgroundImage + ')'}">
+  
+  <div class="text-center text-white z-10 px-4 sm:px-6 lg:px-8 animate-[fadeIn_1.5s_ease-in_forwards]">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-4">{{ title }}</h1>
+    <p class="text-xl md:text-2xl font-light mb-8 max-w-3xl mx-auto">{{ subtitle }}</p>
+    
+    <div *ngIf="showButtons" class="flex flex-wrap justify-center gap-4">
+      <a routerLink="/family-tree" class="btn bg-gold-500 text-primary-900 hover:bg-gold-600 transition-colors duration-200">
+        Explore the Lineage
+      </a>
+      <a routerLink="/notable-figures" class="btn bg-transparent border-2 border-white hover:bg-white hover:text-primary-900 transition-colors duration-200">
+        Notable Ancestors
+      </a>
+    </div>
+  </div>
+  
+  <!-- Decorative scroll indicator -->
+  <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+    <span class="text-white text-sm mb-2">Scroll Down</span>
+    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    </svg>
+  </div>
+</div>

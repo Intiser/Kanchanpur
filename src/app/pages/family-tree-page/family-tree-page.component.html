@@ -1,0 +1,69 @@
+<div class="family-tree-page">
+  <!-- Hero Section -->
+  <app-hero
+    title="Family Tree"
+    subtitle="Exploring the Branches and Connections of Our Ancestral Lineage"
+    [backgroundImage]="heroImage"
+  ></app-hero>
+  
+  <!-- Main Content -->
+  <div class="page-container">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-12 text-center">
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+          The family tree of the House of Syed Shah Miran spans over seven centuries, connecting generations from Hazrat Shah Miran to the present day. Explore the relationships and lineages that have shaped our family's history.
+        </p>
+      </div>
+      
+      <!-- Family Tree Component -->
+      <app-family-tree></app-family-tree>
+      
+      <!-- About the Tree -->
+      <div class="mt-16 bg-primary-50 p-8 rounded-lg">
+        <h2 class="section-title">About Our Family Tree</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-xl font-serif font-semibold text-primary-800 mb-3">Sources and Methodology</h3>
+            <p class="mb-4">
+              Our family tree is based on several historical sources, including:
+            </p>
+            <ul class="list-disc pl-5 mb-4 text-gray-700">
+              <li>Original family records and documents</li>
+              <li>Historical accounts and land grant documents</li>
+              <li>Oral histories passed down through generations</li>
+              <li>Records from connected families and estates</li>
+              <li>Recent genealogical research and DNA analysis</li>
+            </ul>
+            <p>
+              Each connection in the tree has been verified through multiple sources whenever possible, ensuring accuracy while acknowledging that historical records may contain gaps.
+            </p>
+          </div>
+          
+          <div>
+            <h3 class="text-xl font-serif font-semibold text-primary-800 mb-3">Family Connections</h3>
+            <p class="mb-4">
+              Throughout its history, the House of Syed Shah Miran has formed connections with several other notable families through marriage and alliance, including:
+            </p>
+            <ul class="list-disc pl-5 mb-4 text-gray-700">
+              <li>The Zamindars of Rajganj</li>
+              <li>The Chowdhury family of Gazibari</li>
+              <li>The Nawab family of Cumilla (through the Hirar Bari acquisition)</li>
+              <li>Several scholarly families of Dhaka and Chittagong</li>
+            </ul>
+            <p>
+              These connections have expanded our family's influence while enriching our cultural and intellectual heritage.
+            </p>
+          </div>
+        </div>
+        
+        <div class="mt-8">
+          <h3 class="text-xl font-serif font-semibold text-primary-800 mb-3">Ongoing Research</h3>
+          <p>
+            Our family tree is a living document, continually updated as new information comes to light. Current research focuses on documenting branches that migrated to other regions and verifying connections from the 17th-18th centuries where records are sometimes incomplete. Family members with additional information or corrections are encouraged to contact us through the form available on this website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

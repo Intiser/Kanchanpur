@@ -1,0 +1,6 @@
+<blockquote [ngClass]="{'text-center': centered}" class="quote my-8">
+  <p class="italic text-lg md:text-xl text-primary-700">{{ text }}</p>
+  <footer *ngIf="author" class="mt-2 text-right text-primary-600">
+    <cite>— {{ author }}</cite>
+  </footer>
+</blockquote>

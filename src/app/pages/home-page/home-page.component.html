@@ -1,0 +1,112 @@
+<div class="home-page">
+  <!-- Hero Section -->
+  <app-hero
+    title="The House of Syed Shah Miran"
+    subtitle="A Legacy of Spirit, Nobility, and Service"
+    [backgroundImage]="heroImage"
+    [showButtons]="true"
+  ></app-hero>
+  
+  <!-- Introduction Section -->
+  <section class="page-container">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="section-title">Our Heritage</h2>
+      
+      <app-quote [text]="quote" [centered]="true"></app-quote>
+      
+      <p class="mb-6 text-lg">
+        The House of Syed Shah Miran is a family whose lineage traces back to Hazrat Abdul Qadir Jilani through Hazrat Shah Miran (Syed Ahmad) — a brother of Shah Makhdum Ruposh. Our family's zamindari, originally called Lackeraz, was established under the Delhi Sultanate and evolved into the Chowdhury estate in Kanchanpur, Ramganj, Lakshmipur.
+      </p>
+      
+      <p class="mb-8 text-lg">
+        For centuries, our family has upheld a tradition of spiritual guidance, community service, and cultural preservation. From the historic Hirar Bari to our educational institutions, our legacy continues to influence and inspire.
+      </p>
+      
+      <div class="flex flex-wrap justify-center gap-4">
+        <a routerLink="/origins" class="btn btn-primary">Discover Our Origins</a>
+        <a routerLink="/notable-figures" class="btn btn-outline">Meet Notable Ancestors</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Featured Sections -->
+  <section class="bg-primary-50 py-16">
+    <div class="page-container">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Family Tree Feature -->
+        <div class="card hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
+          <div class="aspect-video overflow-hidden bg-primary-100 mb-4 rounded-md">
+            <img 
+              src="https://images.pexels.com/photos/7129713/pexels-photo-7129713.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Family Tree Visualization"
+              class="w-full h-full object-cover"
+            >
+          </div>
+          
+          <div class="flex-grow">
+            <h3 class="text-xl font-serif font-semibold text-primary-800 mb-2">Family Tree</h3>
+            <p class="text-gray-600 mb-4">Explore our extensive family tree, tracing our lineage from Hazrat Shah Miran to the present day. Discover the connections that bind our family across generations.</p>
+          </div>
+          
+          <a routerLink="/family-tree" class="btn btn-outline w-full text-center">View Family Tree</a>
+        </div>
+        
+        <!-- Timeline Feature -->
+        <div class="card hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
+          <div class="aspect-video overflow-hidden bg-primary-100 mb-4 rounded-md">
+            <img 
+              src="https://images.pexels.com/photos/1410227/pexels-photo-1410227.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Historical Timeline"
+              class="w-full h-full object-cover"
+            >
+          </div>
+          
+          <div class="flex-grow">
+            <h3 class="text-xl font-serif font-semibold text-primary-800 mb-2">Historical Timeline</h3>
+            <p class="text-gray-600 mb-4">Journey through our family's history with an interactive timeline. From the establishment of Lackeraz to modern achievements, witness our evolution.</p>
+          </div>
+          
+          <a routerLink="/timeline" class="btn btn-outline w-full text-center">Explore Timeline</a>
+        </div>
+        
+        <!-- Notable Figures Feature -->
+        <div class="card hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
+          <div class="aspect-video overflow-hidden bg-primary-100 mb-4 rounded-md">
+            <img 
+              src="https://images.pexels.com/photos/934067/pexels-photo-934067.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Notable Ancestors"
+              class="w-full h-full object-cover"
+            >
+          </div>
+          
+          <div class="flex-grow">
+            <h3 class="text-xl font-serif font-semibold text-primary-800 mb-2">Notable Ancestors</h3>
+            <p class="text-gray-600 mb-4">Meet the remarkable individuals who shaped our family's legacy. From spiritual leaders to social reformers, learn about their contributions.</p>
+          </div>
+          
+          <a routerLink="/notable-figures" class="btn btn-outline w-full text-center">Meet Our Ancestors</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Reflections Preview -->
+  <section class="page-container">
+    <h2 class="section-title text-center">Family Reflections</h2>
+    
+    <div class="max-w-3xl mx-auto">
+      <div class="card mb-6">
+        <h3 class="text-xl font-serif font-semibold text-primary-800 mb-2">Why This Legacy Still Matters</h3>
+        <p class="text-sm text-primary-500 mb-2">By Syed Abun Nur Chowdhury</p>
+        <p class="text-gray-600 mb-4">
+          In an age of rapid globalization and shifting values, many ask why ancestral legacies still matter. For the descendants of Hazrat Shah Miran, our heritage is not about clinging to past glory but about carrying forward timeless principles...
+        </p>
+        <a routerLink="/reflections" class="text-accent-700 hover:text-accent-900 font-medium">Read More</a>
+      </div>
+      
+      <div class="text-center">
+        <a routerLink="/reflections" class="btn btn-primary">View All Reflections</a>
+      </div>
+    </div>
+  </section>
+</div>

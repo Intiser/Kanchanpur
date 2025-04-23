@@ -1,0 +1,132 @@
+<div class="family-tree p-4">
+  <div *ngIf="!treeData" class="text-center py-10">
+    <p class="text-gray-500">Loading family tree...</p>
+  </div>
+  
+  <div *ngIf="treeData" class="tree-container">
+    <!-- Simplified tree visualization -->
+    <div class="tree-node root-node">
+      <div 
+        class="node-content bg-gold-500 text-white p-4 rounded-lg shadow-md cursor-pointer hover:shadow-lg transition-shadow duration-300"
+        (click)="viewPersonDetails(treeData.id)"
+      >
+        <h3 class="font-serif font-semibold">{{ treeData.name }}</h3>
+        <p class="text-sm text-gold-100">Founder</p>
+      </div>
+      
+      <!-- Vertical line -->
+      <div class="w-1 h-10 bg-primary-300 mx-auto mt-2"></div>
+      
+      <!-- Children -->
+      <div *ngIf="treeData.children && treeData.children.length > 0" class="mt-2">
+        <div class="flex justify-center flex-wrap">
+          <ng-container *ngFor="let child of treeData.children; let i = index">
+            <div class="tree-branch mx-4">
+              <!-- Generation 2 -->
+              <div 
+                class="node-content bg-primary-700 text-white p-3 rounded-lg shadow-md cursor-pointer hover:shadow-lg transition-shadow duration-300"
+                (click)="toggleCollapse(child)"
+              >
+                <h4 class="font-serif">{{ child.name }}</h4>
+                <span *ngIf="child.children && child.children.length > 0" class="text-xs">
+                  {{ child.collapsed ? 'Expand' : 'Collapse' }}
+                </span>
+              </div>
+              
+              <div *ngIf="!child.collapsed && child.children && child.children.length > 0">
+                <!-- Vertical line -->
+                <div class="w-1 h-10 bg-primary-300 mx-auto mt-2"></div>
+                
+                <!-- Generation 3 -->
+                <div class="flex justify-center flex-wrap mt-2">
+                  <ng-container *ngFor="let grandchild of child.children">
+                    <div class="tree-branch mx-4">
+                      <div 
+                        class="node-content bg-primary-600 text-white p-3 rounded-lg shadow-md cursor-pointer hover:shadow-lg transition-shadow duration-300"
+                        (click)="toggleCollapse(grandchild)"
+                      >
+                        <h4 class="font-serif">{{ grandchild.name }}</h4>
+                        <span *ngIf="grandchild.children && grandchild.children.length > 0" class="text-xs">
+                          {{ grandchild.collapsed ? 'Expand' : 'Collapse' }}
+                        </span>
+                      </div>
+                      
+                      <div *ngIf="!grandchild.collapsed && grandchild.children && grandchild.children.length > 0">
+                        <!-- Vertical line -->
+                        <div class="w-1 h-10 bg-primary-300 mx-auto mt-2"></div>
+                        
+                        <!-- Generation 4 -->
+                        <div class="flex justify-center flex-wrap mt-2">
+                          <ng-container *ngFor="let ggchild of grandchild.children">
+                            <div class="tree-branch mx-4">
+                              <div 
+                                class="node-content bg-primary-500 text-white p-3 rounded-lg shadow-md cursor-pointer hover:shadow-lg transition-shadow duration-300"
+                                (click)="viewPersonDetails(ggchild.id)"
+                              >
+                                <h4 class="font-serif">{{ ggchild.name }}</h4>
+                              </div>
+                              
+                              <div *ngIf="!ggchild.collapsed && ggchild.children && ggchild.children.length > 0">
+                                <!-- Vertical line -->
+                                <div class="w-1 h-10 bg-primary-300 mx-auto mt-2"></div>
+                                
+                                <!-- Generation 5 -->
+                                <div class="flex justify-center flex-wrap mt-2">
+                                  <ng-container *ngFor="let gggchild of ggchild.children">
+                                    <div class="tree-branch mx-4">
+                                      <div 
+                                        class="node-content bg-primary-400 text-white p-3 rounded-lg shadow-md cursor-pointer hover:shadow-lg transition-shadow duration-300"
+                                        (click)="viewPersonDetails(gggchild.id)"
+                                      >
+                                        <h4 class="font-serif">{{ gggchild.name }}</h4>
+                                      </div>
+                                      
+                                      <div *ngIf="!gggchild.collapsed && gggchild.children && gggchild.children.length > 0">
+                                        <!-- Vertical line -->
+                                        <div class="w-1 h-10 bg-primary-300 mx-auto mt-2"></div>
+                                        
+                                        <!-- Generation 6 -->
+                                        <div class="flex justify-center flex-wrap mt-2">
+                                          <ng-container *ngFor="let ggggchild of gggchild.children">
+                                            <div class="tree-branch mx-4">
+                                              <div 
+                                                class="node-content bg-primary-300 text-primary-900 p-3 rounded-lg shadow-md cursor-pointer hover:shadow-lg transition-shadow duration-300"
+                                                (click)="viewPersonDetails(ggggchild.id)"
+                                              >
+                                                <h4 class="font-serif">{{ ggggchild.name }}</h4>
+                                              </div>
+                                            </div>
+                                          </ng-container>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </ng-container>
+                                </div>
+                              </div>
+                            </div>
+                          </ng-container>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-container>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="text-center mt-12 p-6 bg-primary-50 rounded-lg">
+    <p class="text-primary-600 mb-4">Note: This is a simplified representation of the family tree. In a full implementation, a more comprehensive interactive visualization using ngx-graph or a custom D3.js solution would be used.</p>
+    <p class="text-primary-700">Click on any person's name to view their biography.</p>
+  </div>
+  
+  <!-- Biography Modal -->
+  <app-biography-modal
+    [person]="selectedPerson"
+    [isOpen]="isModalOpen"
+    (closeModal)="closeModal()"
+  ></app-biography-modal>
+</div>

@@ -1,0 +1,91 @@
+<header [ngClass]="{'bg-white shadow-md': isScrolled, 'bg-transparent': !isScrolled}" 
+        class="fixed w-full top-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-20">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a routerLink="/" class="flex items-center" (click)="closeMobileMenu()">
+          <span [ngClass]="{'text-primary-900': isScrolled, 'text-white': !isScrolled}" 
+                class="font-serif text-2xl md:text-3xl font-bold transition-colors duration-300">
+            The House of Syed Shah Miran
+          </span>
+        </a>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a routerLink="/" 
+           [ngClass]="{'text-accent-800 font-medium': isActive('/'), 'text-primary-700': !isActive('/')}"
+           class="hover:text-primary-900 transition-colors duration-200">Home</a>
+        <a routerLink="/origins" 
+           [ngClass]="{'text-accent-800 font-medium': isActive('/origins'), 'text-primary-700': !isActive('/origins')}"
+           class="hover:text-primary-900 transition-colors duration-200">Origins</a>
+        <a routerLink="/timeline" 
+           [ngClass]="{'text-accent-800 font-medium': isActive('/timeline'), 'text-primary-700': !isActive('/timeline')}"
+           class="hover:text-primary-900 transition-colors duration-200">Timeline</a>
+        <a routerLink="/family-tree" 
+           [ngClass]="{'text-accent-800 font-medium': isActive('/family-tree'), 'text-primary-700': !isActive('/family-tree')}"
+           class="hover:text-primary-900 transition-colors duration-200">Family Tree</a>
+        <a routerLink="/notable-figures" 
+           [ngClass]="{'text-accent-800 font-medium': isActive('/notable-figures'), 'text-primary-700': !isActive('/notable-figures')}"
+           class="hover:text-primary-900 transition-colors duration-200">Notable Figures</a>
+        <a routerLink="/reflections" 
+           [ngClass]="{'text-accent-800 font-medium': isActive('/reflections'), 'text-primary-700': !isActive('/reflections')}"
+           class="hover:text-primary-900 transition-colors duration-200">Reflections</a>
+        <a routerLink="/contact" 
+           [ngClass]="{'text-accent-800 font-medium': isActive('/contact'), 'text-primary-700': !isActive('/contact')}"
+           class="hover:text-primary-900 transition-colors duration-200">Contact</a>
+      </nav>
+      
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center">
+        <button type="button" 
+                [ngClass]="{'text-primary-900': isScrolled, 'text-white': !isScrolled}"
+                class="inline-flex items-center justify-center p-2 rounded-md focus:outline-none" 
+                (click)="toggleMobileMenu()">
+          <span class="sr-only">Open main menu</span>
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" *ngIf="!isMobileMenuOpen"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" *ngIf="isMobileMenuOpen"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Mobile Navigation Menu -->
+  <div [ngClass]="{'block': isMobileMenuOpen, 'hidden': !isMobileMenuOpen}" class="md:hidden bg-white shadow-lg">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <a routerLink="/" 
+         [ngClass]="{'bg-primary-100 text-primary-900': isActive('/')}"
+         class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary-50"
+         (click)="closeMobileMenu()">Home</a>
+      <a routerLink="/origins" 
+         [ngClass]="{'bg-primary-100 text-primary-900': isActive('/origins')}"
+         class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary-50"
+         (click)="closeMobileMenu()">Origins</a>
+      <a routerLink="/timeline" 
+         [ngClass]="{'bg-primary-100 text-primary-900': isActive('/timeline')}"
+         class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary-50"
+         (click)="closeMobileMenu()">Timeline</a>
+      <a routerLink="/family-tree" 
+         [ngClass]="{'bg-primary-100 text-primary-900': isActive('/family-tree')}"
+         class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary-50"
+         (click)="closeMobileMenu()">Family Tree</a>
+      <a routerLink="/notable-figures" 
+         [ngClass]="{'bg-primary-100 text-primary-900': isActive('/notable-figures')}"
+         class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary-50"
+         (click)="closeMobileMenu()">Notable Figures</a>
+      <a routerLink="/reflections" 
+         [ngClass]="{'bg-primary-100 text-primary-900': isActive('/reflections')}"
+         class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary-50"
+         (click)="closeMobileMenu()">Reflections</a>
+      <a routerLink="/contact" 
+         [ngClass]="{'bg-primary-100 text-primary-900': isActive('/contact')}"
+         class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary-50"
+         (click)="closeMobileMenu()">Contact</a>
+    </div>
+  </div>
+</header>
+<!-- Spacer to account for fixed header -->
+<div class="h-20"></div>

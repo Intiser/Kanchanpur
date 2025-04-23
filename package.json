@@ -1,0 +1,32 @@
+{
+  "name": "house-of-syed-shah-miran",
+  "private": true,
+  "scripts": {
+    "ng": "npx ng",
+    "start": "node node_modules/.bin/ng serve",
+    "build": "npx ng build"
+  },
+  "dependencies": {
+    "@angular/animations": "^19.2.8",
+    "@angular/common": "^19.2.8",
+    "@angular/compiler": "^19.2.8",
+    "@angular/core": "^19.2.8",
+    "@angular/forms": "^19.2.8",
+    "@angular/platform-browser": "^19.2.8",
+    "@angular/router": "^19.2.8",
+    "@swimlane/ngx-graph": "^9.0.0",
+    "d3": "^7.8.5",
+    "rxjs": "^7.8.1",
+    "tslib": "^2.5.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^19.2.9",
+    "@angular/cli": "^19.2.9",
+    "@angular/compiler-cli": "^19.2.8",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5",
+    "typescript": "~5.5.0"
+  }
+}

@@ -1,0 +1,55 @@
+<div class="notable-figures-page">
+  <!-- Hero Section -->
+  <app-hero
+    title="Notable Figures"
+    subtitle="The Remarkable Individuals Who Shaped Our Family's Legacy"
+    [backgroundImage]="heroImage"
+  ></app-hero>
+  
+  <!-- Main Content -->
+  <div class="page-container">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-12 text-center">
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+          Throughout our family's history, certain individuals have made exceptional contributions to our legacy and the broader society. From spiritual founders to educational reformers, political leaders to cultural preservationists, each has embodied our values of service and responsibility.
+        </p>
+      </div>
+      
+      <!-- Notable Figures Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div *ngFor="let person of notablePeople; let i = index" 
+             class="animate-[fadeIn_0.5s_ease-in_forwards] opacity-0"
+             [style.animation-delay]="(i * 0.1) + 's'">
+          <app-person-card 
+            [person]="person"
+            (viewDetails)="viewPersonDetails($event)"
+          ></app-person-card>
+        </div>
+      </div>
+      
+      <!-- Biography Modal -->
+      <app-biography-modal
+        [person]="selectedPerson"
+        [isOpen]="isModalOpen"
+        (closeModal)="closeModal()"
+      ></app-biography-modal>
+      
+      <!-- Legacy Section -->
+      <div class="mt-16 bg-primary-50 p-8 rounded-lg">
+        <h2 class="section-title">The Legacy of Service</h2>
+        
+        <p class="mb-6">
+          While each of these notable figures made unique contributions in their own time and context, they share a common thread: a commitment to serving their community and upholding the spiritual and ethical values established by our founder, Hazrat Shah Miran.
+        </p>
+        
+        <p class="mb-6">
+          From spiritual guidance to educational reform, from land stewardship to political advocacy, these individuals adapted the core mission of service to the needs of their era. Their diverse approaches demonstrate the family's adaptability while maintaining consistent values across centuries.
+        </p>
+        
+        <p>
+          Today, new generations continue this legacy in fields ranging from education and public service to cultural preservation and humanitarian work. While their methods may differ from their ancestors, the underlying commitment to making a positive difference in their communities remains constant.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
